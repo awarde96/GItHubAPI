@@ -35,13 +35,9 @@ label {
 }
 
 </style>
-     <head>
-      <script type = "text/javascript"
-         src = "{{ url_for('static', filename = 'hello.js') }}" ></script>
-     </head>
+     <h1>Information from the githubAPI</h1>
 
      <body>
-      <input type = "button" onclick = "sayHello()" value = "hello" />
 
       <table border =1>
         {% for key,value in user.iteritems() %}
@@ -52,6 +48,8 @@ label {
             <tr>
         {% endfor %}
       </table>
+
+      <h1>Social Graph</h1>
 
       <label><input type="checkbox"> Sort values</label>
       <script src="https://d3js.org/d3.v3.min.js"></script>
@@ -76,7 +74,7 @@ label {
       var yAxis = d3.svg.axis()
           .scale(y)
           .orient("left")
-          
+
 
       var svg = d3.select("body").append("svg")
           .attr("width", width + margin.left + margin.right)
@@ -106,7 +104,7 @@ label {
             .attr("y", 6)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
-            .text("Frequency");
+            .text("Number of Commits");
 
         svg.selectAll(".bar")
             .data(data)

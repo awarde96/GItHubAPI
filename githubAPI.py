@@ -6,6 +6,7 @@ username = raw_input("Github Username:")
 pw = getpass.getpass()
 g = Github(username,pw)
 
+f = open('data.tsv','w')
 x = 0
 
 #for repo in g.get_user().get_repos():
@@ -31,7 +32,8 @@ x = 0
 
 #print g.get_last_api_status_message()
 
-print "Repository   Commits"
+print "letter	frequency"
+f.write("letter	frequency\n")
 for repo in g.get_user().get_repos():
     #print repo.name
     numberOfCommits = 0
@@ -39,7 +41,8 @@ for repo in g.get_user().get_repos():
         #print commit
         numberOfCommits += 1
     #print "Number of Commits: " + repr(numberOfCommits)
-    print repo.name + " " + repr(numberOfCommits)
+    print repo.name + "     " + repr(numberOfCommits)
+    f.write(repo.name + "	" + repr(numberOfCommits) + "\n")
     for collaborators in repo.get_collaborators():
         #print collaborators
         x = 1
