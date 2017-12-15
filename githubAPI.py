@@ -9,21 +9,21 @@ g = Github(username,pw)
 f = open('data.tsv','w')
 x = 0
 
-#for repo in g.get_user().get_repos():
-#    print repo.name + " "
-#    numberOfCommits = 0
-#    for commit in repo.get_commits():
+for repo in g.get_user().get_repos():
+    print repo.name + " "
+    numberOfCommits = 0
+    for commit in repo.get_commits():
         #print commit
-#        numberOfCommits += 1
-#    print "Number of Commits: " + repr(numberOfCommits)
-#    for collaborators in repo.get_collaborators():
-#        print collaborators
-#    for languages in repo.get_languages():
-#       print languages
-#    for branch in repo.get_branches():
-#        print branch
-#        print ""
-#    print repo.get_stats_contributors()
+        numberOfCommits += 1
+    print "Number of Commits: " + repr(numberOfCommits)
+    for collaborators in repo.get_collaborators():
+        print collaborators
+    for languages in repo.get_languages():
+       print languages
+    for branch in repo.get_branches():
+        print branch
+        print ""
+    print repo.get_stats_contributors()
 
 
 
@@ -32,25 +32,25 @@ x = 0
 
 #print g.get_last_api_status_message()
 
-print "letter	frequency"
-f.write("letter	frequency\n")
-for repo in g.get_user().get_repos():
+#print "letter	frequency"
+#f.write("letter	frequency\n")
+#for repo in g.get_user().get_repos():
     #print repo.name
-    numberOfCommits = 0
-    for commit in repo.get_commits():
+#    numberOfCommits = 0
+#    for commit in repo.get_commits():
         #print commit
-        numberOfCommits += 1
+#        numberOfCommits += 1
     #print "Number of Commits: " + repr(numberOfCommits)
-    print repo.name + "     " + repr(numberOfCommits)
-    f.write(repo.name + "	" + repr(numberOfCommits) + "\n")
-    for collaborators in repo.get_collaborators():
+#    print repo.name + "     " + repr(numberOfCommits)
+#    f.write(repo.name + "	" + repr(numberOfCommits) + "\n")
+#    for collaborators in repo.get_collaborators():
         #print collaborators
-        x = 1
-    for languages in repo.get_languages():
+#        x = 1
+#    for languages in repo.get_languages():
        #print languages
-       x = 1
-    for branch in repo.get_branches():
+#       x = 1
+#    for branch in repo.get_branches():
         #print branch
         #print ""
-        x = 1
+#        x = 1
     #print repo.get_stats_contributors()
